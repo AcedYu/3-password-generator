@@ -9,11 +9,11 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(8, true, true, true, true);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  alert(`Your password is: ${password}`);
+  // alert(`Your password is: ${password}`);
 
 }
 
@@ -22,7 +22,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Password Generation functions
 var generatePassword = (length, lowercase, uppercase, numeric, special) => {
-  var result = '';
+  var result = [];
   var validChars = [];
   // Return error message if length doesn't meet criteria
   if (length < 8 || length > 128) {
@@ -34,23 +34,34 @@ var generatePassword = (length, lowercase, uppercase, numeric, special) => {
   }
   // Adds a lowercase character if lowercase option is checked
   if (lowercase) {
-    result = result + lowerAlpha[Math.floor(Math.random())*lowerAlpha.length];
-    validChars.concat(lowerAlpha);
+    result.push(lowerAlpha[Math.floor(Math.random() * lowerAlpha.length)]);
+    validChars = validChars.concat(lowerAlpha);
   }
   // Adds an uppercase character if uppercase option is checked
   if (uppercase) {
-    result = result + upperAlpha[Math.floor(Math.random())*upperAlpha.length];
-    validChars.concat(upperAlpha);
+    result.push(upperAlpha[Math.floor(Math.random() * upperAlpha.length)]);
+    validChars = validChars.concat(upperAlpha);
   }
   // Adds a number if the number option is checked
   if (numeric) {
-    result = result + nums[Math.floor(Math.random())*nums.length];
-    validChars.concat(nums);
+    result.push(nums[Math.floor(Math.random() * nums.length)]);
+    validChars = validChars.concat(nums);
   }
   // Adds a special character if the special character option is checked
   if (special) {
-    result = result + specialChar[Math.floor(Math.random())*specialChar.length];
-    validChars.concat(specialChar);
+    result.push(specialChar[Math.floor(Math.random() * specialChar.length)]);
+    validChars = validChars.concat(specialChar);
   }
-  return "Hello, World!";
+  // Populate the array with random characters from all available characters within the remaining length
+  for (var i = result.length; i < length; i++) {
+    result.push(validChars[Math.floor(Math.random() * validChars.length)]);
+  }
+  // Shuffle the Array
+  result.sort(() => Math.random() - 0.5);
+
+  // Turn the array into a string
+  var password = result.join('');
+
+  // Return the generated password
+  return password;
 }
