@@ -7,7 +7,7 @@ I implement logical features such as:
 - length option between 8 and 128
 - choice of lowercase, uppercase, numeric and/or special characters
 
-Due: Thursday, March 25, 2021 11:59 PM
+Due: Thursday, March 26, 2021 11:59 PM
 
 ## Built With
 
