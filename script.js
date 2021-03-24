@@ -9,7 +9,14 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword(8, true, true, true, true);
+  var formData = document.querySelector("form");
+  var quantity = formData.quantity.value;
+  var includeLow = formData.lower.checked;
+  var includeUp = formData.upper.checked;
+  var includeNum = formData.nums.checked;
+  var includeSpec = formData.specials.checked;
+
+  var password = generatePassword(quantity, includeLow, includeUp, includeNum, includeSpec);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -61,7 +68,7 @@ var generatePassword = (length, lowercase, uppercase, numeric, special) => {
 
   // Turn the array into a string
   var password = result.join('');
-
+  var message = `Your password is: \n ${password}`;
   // Return the generated password
-  return password;
+  return message;
 }

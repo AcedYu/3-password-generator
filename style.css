@@ -54,6 +54,11 @@ header {
   min-height: 100px;
 }
 
+.checkLabel {
+  display: inline-block;
+  width: 220px;
+}
+
 .card-footer {
   text-align: center;
 }
