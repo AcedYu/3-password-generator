@@ -3,8 +3,8 @@ This assignment was assigned by the U.C. Berkeley Extension Full-time Full Stack
 This is assignment 3 for the program. In this assignment I implemented password generator logic using Javascript for the page. After taking in the user selected prompts the program will return and display a randomly generated password that fulfills the selection.
 
 I implement logical features such as:
-- A series of selectable prompts for password criteria
 - length option between 8 and 128
+- A series of prompts for password criteria
 - choice of lowercase, uppercase, numeric and/or special characters
 
 Due: Thursday, March 26, 2021 11:59 PM
