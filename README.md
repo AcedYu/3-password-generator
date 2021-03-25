@@ -7,6 +7,8 @@ I implement logical features such as:
 - A series of prompts for password criteria
 - choice of lowercase, uppercase, numeric and/or special characters
 
+![Image](demopic.png)
+
 Due: Thursday, March 26, 2021 11:59 PM
 
 ## Built With
