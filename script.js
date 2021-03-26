@@ -76,7 +76,7 @@ var generatePassword = (length, lowercase, uppercase, numeric, special) => {
 
   // Turn the array into a string
   var password = result.join('');
-  var message = `Your password is: \n ${password}`;
+  var message = `Your password is: \n${password}`;
   // Return the generated password
   return message;
 }
